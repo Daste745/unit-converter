@@ -1,0 +1,83 @@
+{
+    "lenght" : {
+        "base" : "meter",
+        "conversions" : {
+            "nanometer" : 1000000000,
+            "micrometer" : 1000000,
+            "milimeter" : 1000,
+            "centimeter" : 100,
+            "meter" : 1,
+            "inch" : 39.37007874,
+            "foot" : 3.280839895,
+            "yard" : 1.0936132983,
+            "kilometer" : 0.001,
+            "mile" : 0.0006213689
+        }
+    },
+    "temperature" : {
+        "base" : "celsius",
+        "conversions" : {
+            "celsius" : 1,
+            "farenheit" : 33.8,
+            "kelvin" : 274.15
+        }
+    },
+    "area" : {
+        "base" : "square meter",
+        "conversions" : {
+            "square mile" : 0.0000003861022,
+            "square kilometer" : 0.000001,
+            "hectare" : 0.0001,
+            "acre" : 0.0002471054,
+            "square meter" : 1,
+            "square yard" : 1.1959900463,
+            "square foot" : 10.763910417,
+            "square centimeter" : 10000,
+            "square inch" : 1550.0031,
+            "square micrometer" : 1000000000000
+        }
+    },
+    "volume" : {
+        "base" : "cubic meter",
+        "conversions" : {
+            "cubic mile" : 0.000000000239912759,
+            "cubic kilometer" : 0.000000001,
+            "cubic meter" : 1,
+            "cubic yard" : 1.3079506193,
+            "cubic foot" : 35.314666721,
+            "cubic inch" : 61023.744095,
+            "liter" : 1000,
+            "mililiter" : 1000000,
+            "cubic centimeter" : 1000000
+        }
+    },
+    "weight" : {
+        "base" : "kilogram",
+        "conversions" : {
+            "tonne" : 0.001,
+            "kilogram" : 1,
+            "pound" : 2.2046244202,
+            "ounce" : 35.273990723,
+            "gram" : 1000,
+            "carrat" : 5000,
+            "miligram" : 1000000
+        }
+    },
+    "time" : {
+        "base" : "second",
+        "conversions" : {
+            "year" : 0.00000003168808781,
+            "month" : 0.0000003802570537,
+            "week" : 0.0000016534,
+            "day" : 0.0000115741,
+            "hour" : 0.0002777778,
+            "minute" : 0.0166666667,
+            "second" : 1,
+            "milisecond" : 1000,
+            "microsecond" : 1000000,
+            "nanosecond" : 1000000000,
+            "picosecond" : 1000000000000
+            
+        }
+    }
+}
