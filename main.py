@@ -38,7 +38,7 @@ def convert(a: str, b: str, value: Union[int, float]) -> Union[int, float]:
         if a == "celsius":
             to_celsius = value
         elif a == "fahrenheit":
-            # [C] = ([F] − ratio) * (5/9)
+            # [C] = ([F] Ã¢Ë†â€™ ratio) * (5/9)
             to_celsius = (value - base_unit_ratio) * (5/9)
         elif a == "kelvin":
             # [C] = [K] − ratio
