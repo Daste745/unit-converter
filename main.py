@@ -1,6 +1,6 @@
 #!/bin/python
 
-from typing import Union, Tuple
+from typing import Union, Tuple, List
 import json
 
 
@@ -18,10 +18,7 @@ def unit_type(unit: str) -> Union[str, None]:
 
 
 def is_same_type(a: str, b: str) -> bool:
-    if unit_type(a) == unit_type(b):
-        return True
-    else:
-        return False
+    return unit_type(a) == unit_type(b)
 
 
 def convert(a: str, b: str, value: Union[int, float]) -> Union[int, float]:
@@ -31,13 +28,13 @@ def convert(a: str, b: str, value: Union[int, float]) -> Union[int, float]:
         # Same unit, so no conversion needed
         return value
 
-    base_unit_ratio = conversion_table[unit_type(a)]["conversions"][a]
-    target_unit_ratio = conversion_table[unit_type(b)]["conversions"][b]
+    base_unit_ratio: float = conversion_table[unit_type(a)]["conversions"][a]
+    target_unit_ratio: float = conversion_table[unit_type(b)]["conversions"][b]
 
     # Temperature gets its own section, because it includes
     # addition/subtraction and a specific ratio for fahrenheit
     if unit_type(a) == "temperature":
-        to_celsius: int
+        to_celsius: float
         if a == "celsius":
             to_celsius = value
         elif a == "fahrenheit":
@@ -63,21 +60,22 @@ def convertf(a: str, b: str, value: Union[int, float]) -> str:
     return f"{value} {a} is {convert(a, b, value)} {b}"
 
 
-def parse_string(input: str) -> Tuple[str, str, int]:
+def parse_string(input: str) -> Tuple[str, str, float]:
     if "to" in input:
-        split_input = input.split(" to ")
+        split_input: str = input.split(" to ")
     if "in" in input:
-        split_input = input.split(" in ")
+        split_input: str = input.split(" in ")
 
     # Remove trailing whitespaces with .strip()
-    split_input = [i.strip() for i in split_input]
+    split_input: List[str] = [i.strip() for i in split_input]
 
     # The value and base unit are in split_input[0],
     # so we need to split them into individual variables
-    value = int(split_input[0].split(" ")[0])
-    base_unit = " ".join(split_input[0].split(" ")[1:])
+    value: float = float(split_input[0].split(" ")[0])
+    base_unit: str = " ".join(split_input[0].split(" ")[1:])
+    target_unit: str = split_input[1]
 
-    return (base_unit, split_input[1], value)
+    return (base_unit, target_unit, value)
 
 
 if __name__ == "__main__":
