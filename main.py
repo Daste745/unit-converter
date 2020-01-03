@@ -41,7 +41,7 @@ def convert(a: str, b: str, value: Union[int, float]) -> Union[int, float]:
             # [C] = ([F] - ratio) * (5/9)
             to_celsius = (value - base_unit_ratio) * (5/9)
         elif a == "kelvin":
-            # [C] = [K] − ratio
+            # [C] = [K] - ratio
             to_celsius = value - base_unit_ratio
 
         if b == "celsius":
@@ -57,7 +57,11 @@ def convert(a: str, b: str, value: Union[int, float]) -> Union[int, float]:
 
 
 def convertf(a: str, b: str, value: Union[int, float]) -> str:
-    return f"{value} {a} is {convert(a, b, value)} {b}"
+    a_formatted = a + "s" if value != 0 else a
+    final_value: float = convert(a, b, value)
+    b_formatted = b + "s" if final_value != 0 else b
+
+    return f"{value} {a_formatted} = {final_value} {b_formatted}"
 
 
 def parse_string(input: str) -> Tuple[str, str, float]:
