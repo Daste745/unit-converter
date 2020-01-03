@@ -5,7 +5,7 @@
 - Fuzzy unit name matching (km -> kilometers, m^2 -> meters squared)
 
 ## Conversions structure
-```json
+```
 "unit_type": {
     "base": "unit_name",
     "conversions": {
