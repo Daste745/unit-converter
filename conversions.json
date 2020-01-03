@@ -18,8 +18,8 @@
         "base": "celsius",
         "conversions": {
             "celsius": 1,
-            "farenheit": 33.8,
-            "kelvin": 274.15
+            "fahrenheit": 32,
+            "kelvin": 273.15
         }
     },
     "area": {
