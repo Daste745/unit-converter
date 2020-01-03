@@ -107,5 +107,8 @@ if __name__ == "__main__":
     while True:
         try:
             print(convertf(*parse_string(input("> "))))
+        except Exception as e:
+            print(str(e))
+            pass
         except KeyboardInterrupt:
             break
