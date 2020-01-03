@@ -12,6 +12,17 @@
             "yard": 1.0936132983,
             "kilometer": 0.001,
             "mile": 0.0006213689
+        },
+        "abbreviations": {
+            "nm": "nanometer",
+            "um": "micrometer",
+            "mm": "milimeter",
+            "cm": "centimeter",
+            "m": "meter",
+            "in": "inch",
+            "ft": "foot",
+            "yd": "yard",
+            "km": "kilometer"
         }
     },
     "temperature": {
@@ -20,6 +31,11 @@
             "celsius": 1,
             "fahrenheit": 32,
             "kelvin": 273.15
+        },
+        "abbreviations": {
+            "c": "celsius",
+            "f": "fahrenheit",
+            "k": "kelvin"
         }
     },
     "area": {
@@ -35,6 +51,10 @@
             "square centimeter": 10000,
             "square inch": 1550.0031,
             "square micrometer": 1000000000000
+        },
+        "abbreviations": {
+            "ha": "hectare",
+            "a": "acre"
         }
     },
     "volume": {
@@ -49,6 +69,10 @@
             "liter": 1000,
             "mililiter": 1000000,
             "cubic centimeter": 1000000
+        },
+        "abbreviations": {
+            "l": "liter",
+            "ml": "mililiter"
         }
     },
     "weight": {
@@ -61,6 +85,14 @@
             "gram": 1000,
             "carat": 5000,
             "miligram": 1000000
+        },
+        "abbreviations": {
+            "t": "tonne",
+            "kg": "kilogram",
+            "oz": "ounce",
+            "g": "gram",
+            "ct": "carat",
+            "mg": "miligram"
         }
     },
     "time": {
@@ -77,6 +109,17 @@
             "microsecond": 1000000,
             "nanosecond": 1000000000,
             "picosecond": 1000000000000
+        },
+        "abbreviations": {
+            "yr": "year",
+            "mo": "month",
+            "d": "day",
+            "h": "hour",
+            "s": "second",
+            "ms": "milisecond",
+            "us": "microsecond",
+            "ns": "nanosecond",
+            "ps": "picosecond"
         }
     }
 }

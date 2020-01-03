@@ -64,6 +64,25 @@ def convertf(a: str, b: str, value: Union[int, float]) -> str:
     return f"{value} {a_formatted} = {final_value} {b_formatted}"
 
 
+def normalize(input: str) -> str:
+    if input.endswith("s"):
+        return input[:-1]
+    elif any(input.endswith(i) for i in ["m2", "m^2"]):
+        return "square " + input[:-2]
+    elif any(input.endswith(i) for i in ["m3", "m^3"]):
+        return "cubic " + input[:-2]
+    else:
+        return input
+
+
+def get_abbreviation(input: str) -> str:
+    abbreviations: dict = {}
+    for i in [conversion_table[j]["abbreviations"] for j in conversion_table]:
+        abbreviations.update(i)
+
+    return abbreviations[input] if input in abbreviations else input
+
+
 def parse_string(input: str) -> Tuple[str, str, float]:
     if "to" in input:
         split_input: str = input.split(" to ")
@@ -79,7 +98,9 @@ def parse_string(input: str) -> Tuple[str, str, float]:
     base_unit: str = " ".join(split_input[0].split(" ")[1:])
     target_unit: str = split_input[1]
 
-    return (base_unit, target_unit, value)
+    return (normalize(get_abbreviation(base_unit)),
+            normalize(get_abbreviation(target_unit)),
+            value)
 
 
 if __name__ == "__main__":
