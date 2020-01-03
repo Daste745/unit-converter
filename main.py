@@ -66,6 +66,8 @@ def convertf(a: str, b: str, value: Union[int, float]) -> str:
 
 def normalize(input: str) -> str:
     if input.endswith("s"):
+        if input == "celsius":
+            return input
         return input[:-1]
     elif any(input.endswith(i) for i in ["m2", "m^2"]):
         return "square " + input[:-2]
